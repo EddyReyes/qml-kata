@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <!-- node live reload -->
+	<script>
+	  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+	  ':35729/livereload.js?snipver=1"></' + 'script>')
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<style media="screen">
+		.header {
+			grid-area: header;
+			font-size: 20pt;
+			background-color: #7CB685;
+			padding: 5px;
+			font-family: 'Raleway', sans-serif;
+			color: #E8F5F1;
+			border-radius: 5px;
+		}
+
+		.main {
+			grid-area: main;
+			background-color: #66A4C8;
+			padding: 5px;
+			font-family: 'Raleway', sans-serif;
+			color: #E8F5F1;
+			border-radius: 5px;
+		}
+
+		.sidebar {
+			grid-area: sidebar;
+			background-color: #7776B1;
+			padding: 5px;
+			font-family: 'Raleway', sans-serif;
+			color: #E8F5F1;
+			border-radius: 5px;
+		}
+
+		.stuff {
+			grid-area: stuff;
+			background-color: #B0AFD1;
+			padding: 5px;
+			font-family: 'Raleway', sans-serif;
+			color: #E8F5F1;
+			border-radius: 5px;
+		}
+
+		.footer {
+			grid-area: footer;
+			background-color: #D54530;
+			padding: 5px;
+			font-size: 20px;
+			font-family: 'Raleway', sans-serif;
+			color: #E8F5F1;
+			border-radius: 5px;
+		}
+
+		.wrapper {
+			display: grid;
+			grid-gap: 0px;
+			grid-template-areas:
+				"header header"
+				"main main"
+				"stuff stuff"
+				"sidebar sidebar"
+				"footer footer";
+			align-content: center;
+		}
+
+		@media only screen and (min-width: 300px) {
+			.wrapper {
+				grid-template-columns: 1fr 2fr;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"header header"
+					"sidebar sidebar"
+					"main main"
+					"stuff stuff"
+					"footer footer";
+			}
+		}
+
+		@media only screen and (min-width: 600px) {
+			.wrapper {
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"sidebar header header"
+					"sidebar main main"
+					"sidebar stuff stuff"
+					"footer footer footer";
+			}
+		}
+
+		@media only screen and (min-width: 900px) {
+			.wrapper {
+				grid-template-columns: 1fr 2fr 1fr;
+				grid-template-rows: auto;
+				grid-template-areas:
+					"sidebar header header"
+					"sidebar main stuff"
+					"sidebar main stuff"
+					"sidebar footer footer";
+			}
+		}
+	</style>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            hello
+        </title>
+    </head>
+    <body>
+		<div class="wrapper">
+			<div class="header">header</div>
+			<div class="main">main</div>
+			<div class="sidebar">sidebar</div>
+			<div class="stuff">stuff</div>
+			<div class="footer">footer</div>
+		</div>
+    </body>
+</html>
